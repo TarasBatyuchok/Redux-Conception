@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import "./App.css";
 import { addCustomerAction, removeCustomerAction } from "./store/customerReducer";
 import { addCashAction, getCashAction } from "./store/cashReducer";
+import fetchCustomers from "./asyncAction/customer";
 
 function App() {
   const dispatch = useDispatch();
@@ -11,13 +12,12 @@ function App() {
   const customer = useSelector((state) => state.customer.customers);
 
 
+
   const addCash = () => {
-    // dispatch({ type: "ADD_CASH", payload: 1 });
     dispatch(addCashAction(1));
   };
 
   const getCash = () => {
-    // dispatch({ type: "GET_CASH", payload: 1 });
     dispatch(getCashAction(1));
   };
 
@@ -76,6 +76,19 @@ function App() {
         >
           Add Customer
         </button>
+        <button
+          style={{
+            padding: "10px 20px",
+            background: "#008CBA",
+            border: "none",
+            color: "white",
+            borderRadius: "5px",
+            cursor: "pointer",
+          }}
+          onClick={() => dispatch(fetchCustomers())}
+        >
+          Add Many Customers
+        </button>
       </div>
 
       {customer.length > 0 ? (
@@ -91,6 +104,7 @@ function App() {
                 padding: "10px",
                 margin: "10px",
               }}
+              key={item.id}
             >
               <div>{item.name}</div>
               <button
