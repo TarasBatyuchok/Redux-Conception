@@ -2,23 +2,25 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import "./App.css";
-import { addCustomerAction, removeCustomerAction, plusCountAction,minusCountAction } from "./vanillaRedux/mainReducer";
+// import { addCustomerAction, removeCustomerAction, plusCountAction,minusCountAction } from "./vanillaRedux/mainReducer";
 
 import fetchCustomers from "./asyncAction/customer";
+import { decrement, increment } from "./toolkitRedux/toolkitReducer";
 
 function App() {
   const dispatch = useDispatch();
-  const count = useSelector((state) => state.main.count);
-  const customer = useSelector((state) => state.main.customers);
+  // const count = useSelector((state) => state.main.count);
+  const count  = useSelector((state) => state.toolkit.count)
+  // const customer = useSelector((state) => state.toolkit.customers);
 
 
 
-  const addCash = () => {
-    dispatch(plusCountAction(1));
+  const incrementCount = () => {
+    dispatch(increment());
   };
 
-  const getCash = () => {
-    dispatch(minusCountAction(1));
+  const decrementCount = () => {
+    dispatch(decrement());
   };
 
   const addCustomer = (name) => {
@@ -46,7 +48,7 @@ function App() {
             borderRadius: "5px",
             cursor: "pointer",
           }}
-          onClick={() => addCash()}
+          onClick={() => incrementCount()}
         >
           Plus
         </button>
@@ -59,11 +61,11 @@ function App() {
             borderRadius: "5px",
             cursor: "pointer",
           }}
-          onClick={() => getCash()}
+          onClick={() => decrementCount()}
         >
           Minus
         </button>
-        <button
+        {/* <button
           style={{
             padding: "10px 20px",
             background: "#008CBA",
@@ -75,8 +77,8 @@ function App() {
           onClick={() => addCustomer(prompt())}
         >
           Add Customer
-        </button>
-        <button
+        </button> */}
+        {/* <button
           style={{
             padding: "10px 20px",
             background: "#008CBA",
@@ -88,10 +90,10 @@ function App() {
           onClick={() => dispatch(fetchCustomers())}
         >
           Add Many Customers
-        </button>
+        </button> */}
       </div>
 
-      {customer.length > 0 ? (
+      {/* {customer.length > 0 ? (
         customer.map((item) => {
           return (
             <div
@@ -133,7 +135,7 @@ function App() {
         >
           No customer
         </div>
-      )}
+      )} */}
     </>
   );
 }
