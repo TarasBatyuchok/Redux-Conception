@@ -1,4 +1,4 @@
-import { addManyCustomersAction } from "../vanillaRedux/mainReducer";
+import { addCustomers } from "../toolkitRedux/toolkitSlice";
 
 const fetchCustomers = () => {
   const url = `https://jsonplaceholder.typicode.com/users`;
@@ -13,7 +13,7 @@ const fetchCustomers = () => {
       })
       .then((json) => {
         console.log("Отримані дані:", json);
-        dispatch(addManyCustomersAction(json))
+        dispatch(addCustomers(json))
       })
       .catch((error) => console.error("Помилка при отриманні даних:", error));
   };

@@ -12,13 +12,11 @@ export const decrement = createAction( "DECREMENT");
 
 
 export default createReducer( initialState,{
-  [increment]: function(state) {
+  [increment]: (state) => {
       state.count = state.count + 1
   },
-  [decrement]: function(state) {
+  [decrement]: (state) => {
       state.count = state.count - 1
   }
-
 })
 
-console.log(decrement)

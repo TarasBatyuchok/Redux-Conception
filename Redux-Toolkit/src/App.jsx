@@ -2,18 +2,21 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import "./App.css";
-// import { addCustomerAction, removeCustomerAction, plusCountAction,minusCountAction } from "./vanillaRedux/mainReducer";
+import {
+  addTodo,
+  decrement,
+  increment,
+  removeCustomer,
+} from "./toolkitRedux/toolkitSlice";
 
 import fetchCustomers from "./asyncAction/customer";
-import { decrement, increment } from "./toolkitRedux/toolkitReducer";
+// import { decrement, increment } from "./toolkitRedux/toolkitReducer";
 
 function App() {
   const dispatch = useDispatch();
   // const count = useSelector((state) => state.main.count);
-  const count  = useSelector((state) => state.toolkit.count)
-  // const customer = useSelector((state) => state.toolkit.customers);
-
-
+  const count = useSelector((state) => state.toolkit.count);
+  const customer = useSelector((state) => state.toolkit.customers);
 
   const incrementCount = () => {
     dispatch(increment());
@@ -28,11 +31,17 @@ function App() {
       name,
       id: Date.now(),
     };
-    dispatch(addCustomerAction(customer));
+    dispatch(addTodo(customer));
   };
 
-  const removeCustomer = (customer) => {
-    dispatch(removeCustomerAction(customer.id));
+  const deleteCustomer = (customer) => {
+    dispatch(removeCustomer(customer.id));
+  };
+
+
+
+  const addCustomers = () => {
+        dispatch(fetchCustomers());
   };
 
   return (
@@ -65,7 +74,7 @@ function App() {
         >
           Minus
         </button>
-        {/* <button
+        <button
           style={{
             padding: "10px 20px",
             background: "#008CBA",
@@ -77,8 +86,8 @@ function App() {
           onClick={() => addCustomer(prompt())}
         >
           Add Customer
-        </button> */}
-        {/* <button
+        </button>
+        <button
           style={{
             padding: "10px 20px",
             background: "#008CBA",
@@ -87,13 +96,13 @@ function App() {
             borderRadius: "5px",
             cursor: "pointer",
           }}
-          onClick={() => dispatch(fetchCustomers())}
+          onClick={() => addCustomers()}
         >
           Add Many Customers
-        </button> */}
+        </button>
       </div>
 
-      {/* {customer.length > 0 ? (
+      {customer.length > 0 ? (
         customer.map((item) => {
           return (
             <div
@@ -116,7 +125,7 @@ function App() {
                   padding: "5px 10px",
                   cursor: "pointer",
                 }}
-                onClick={() => removeCustomer(item)}
+                onClick={() => deleteCustomer(item)}
               >
                 Remove
               </button>
@@ -135,7 +144,7 @@ function App() {
         >
           No customer
         </div>
-      )} */}
+      )}
     </>
   );
 }
