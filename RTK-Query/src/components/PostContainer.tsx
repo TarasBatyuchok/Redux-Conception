@@ -1,12 +1,13 @@
 import React, {useState} from "react";
 import {postAPI} from "../services/PostServices";
 import PostItem from "./PostItem";
-import { current } from "@reduxjs/toolkit";
 import { IPost } from "../models/IPost";
 
 function PostContainer() {
   const [limit, setLimit] = useState(10)
   const { data: posts, error, isLoading } = postAPI.useFetchAllPostsQuery(limit);
+  const [updatePost, {}] = postAPI.useUpdatePostMutation();
+  const [deletePost, {}] = postAPI.useDeletePostMutation();
 
 
   const handlerLimitSwitch =(value: string)=>{
@@ -20,16 +21,17 @@ function PostContainer() {
 
   }
 
-  const [updatePost, {}] = postAPI.useDeletePostMutation();
-  const [deletePost, {}] = postAPI.useUpdatePostMutation();
 
 
-  const handleRemove =(post: IPost) =>{
-    deletePost(post)
-}
-const handleUpdate =(post: IPost) =>{
-    updatePost(post)
-}
+
+  const handleRemove = (post: IPost) => {
+    console.log(post)
+     deletePost(post)
+ }
+ 
+ const handleUpdate = (post: IPost) => {
+     updatePost(post)
+ }
 
   return(
     <div className="flex flex-col gap-3 mt-3">
@@ -46,7 +48,7 @@ const handleUpdate =(post: IPost) =>{
         <li className="p-2 border border-gray-500 cursor-pointer hover:bg-slate-400"onClick={handlerCustomLimit}>custom</li>
        </ul>
       {posts?.map( post=>
-            <PostItem remove={handleRemove}  update={handleUpdate} key={post.id} post={post} />
+        <PostItem remove={handleRemove}  update={handleUpdate} key={post.id} post={post} />
       )}
     </div>
   );
