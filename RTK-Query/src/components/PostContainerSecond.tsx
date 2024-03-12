@@ -37,7 +37,7 @@ const handleUpdate = (post: IPost) => {
 
       const title = prompt();
       const postId = posts ? posts.length + 1 : 0;
-      console.log(title)
+      // console.log(title)
       await createPost({id:`${postId}`,  title: `${title} ${postId}` , body: title} as IPost);
   }
 

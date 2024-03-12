@@ -1,23 +1,8 @@
 {
   "posts": [
     {
-      "id": "1",
-      "title": "s",
-      "body": "asd"
-    },
-    {
-      "id": "2",
-      "title": "asd 2",
-      "body": "asd"
-    },
-    {
       "id": "3",
       "title": "asd 3",
-      "body": "asd"
-    },
-    {
-      "id": "4",
-      "title": "asd 4",
       "body": "asd"
     },
     {
@@ -26,24 +11,9 @@
       "body": "asd"
     },
     {
-      "id": "6",
-      "title": "asd 6",
-      "body": "asd"
-    },
-    {
-      "id": "7",
-      "title": "asd 7",
-      "body": "asd"
-    },
-    {
-      "id": "8",
-      "title": "asd 8",
-      "body": "asd"
-    },
-    {
-      "id": "9",
-      "title": "asd 9",
-      "body": "asd"
+      "id": "3",
+      "title": " 3",
+      "body": ""
     }
   ],
   "comments": [
