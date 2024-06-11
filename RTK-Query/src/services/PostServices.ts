@@ -2,11 +2,11 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { IPost } from "../models/IPost";
 
 const JsonPlaceholder = 'https://jsonplaceholder.typicode.com/';
-const JsonServer = ' http://localhost:5000/';
+const JsonServer = ' http://localhost:3000/';
 
 export const postAPI = createApi({
   reducerPath: "postAPI",
-  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:5000" }),
+  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:3000" }),
   tagTypes: ['Post'],
   endpoints: (build) => ({
       fetchAllPosts: build.query<IPost[], number>({

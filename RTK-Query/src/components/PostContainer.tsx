@@ -47,8 +47,8 @@ function PostContainer() {
         <li className="p-2 border border-gray-500 cursor-pointer hover:bg-slate-400"onClick={(event) =>handlerLimitSwitch(event.currentTarget.innerText)}>10</li>
         <li className="p-2 border border-gray-500 cursor-pointer hover:bg-slate-400"onClick={handlerCustomLimit}>custom</li>
        </ul>
-      {posts?.map( post=>
-        <PostItem remove={handleRemove}  update={handleUpdate} key={post.id} post={post} />
+      {posts?.map( (post, id)=>
+        <PostItem remove={handleRemove}  update={handleUpdate} key={id} post={post} />
       )}
     </div>
   );

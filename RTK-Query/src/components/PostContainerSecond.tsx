@@ -7,7 +7,7 @@ import { IPost } from "../models/IPost";
 function PostContainerSecond() {
   const [limit, setLimit] = useState(100)
   const { data: posts, error, isLoading, refetch } = postAPI.useFetchAllPostsQuery(limit, {
-    // pollingInterval: null
+    //pollingInterval: null
   });
   const [createPost, {}] = postAPI.useCreatePostMutation();
   const [updatePost, {}] = postAPI.useUpdatePostMutation();
@@ -47,8 +47,8 @@ const handleUpdate = (post: IPost) => {
       <button className="border border-green-400" onClick={handleCreate}>Add new post</button>
       {isLoading && <h1>Loading...</h1>}
       {error && <h1>Error</h1>}
-      {posts?.map( post=>
-        <PostItem remove={handleRemove}  update={handleUpdate} key={post.id} post={post} />
+      {posts?.map( (post, id)=>
+        <PostItem remove={handleRemove}  update={handleUpdate} key={id} post={post} />
       )}
     </div>
   );
