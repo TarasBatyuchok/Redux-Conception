@@ -95,7 +95,7 @@ const BlogForm = () => {
           ${isFormValid ? 'bg-indigo-600 hover:bg-indigo-700' : 'bg-gray-400 cursor-not-allowed'}`}
         disabled={!isFormValid} 
       >
-        {!isFormValid ? "Аill all fields !!" : "Create Blog"}
+        {!isFormValid ? "Add all fields !!" : "Create Blog"}
       </button>
     </form>
   );

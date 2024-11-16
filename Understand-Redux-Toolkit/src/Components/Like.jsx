@@ -5,7 +5,7 @@ const responseEmoji = {
   unlike: "👎",
 };
 
-const Rating = () => {
+const Like = () => {
   const [selectedResponse, setSelectedResponse] = useState(null);
 
   const handleClick = (response) => {
@@ -32,4 +32,4 @@ const Rating = () => {
   );
 };
 
-export default Rating;
+export default Like;

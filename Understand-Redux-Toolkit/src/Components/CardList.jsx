@@ -1,9 +1,9 @@
-import Rating from "./Rating";
+import Like from "./Like";
 import Spinner from "./Spinner";
 
 
 function CardList({ blogs }) {
-  // Перевірка наявності даних і формату
+
   if (!blogs.length) {
     return <Spinner/>;
   }
@@ -23,7 +23,7 @@ function CardList({ blogs }) {
             {/* <BlogUser userId={blog.userId} /> */}
           </p>
           <div className="flex items-center justify-between">
-            <Rating />
+            <Like />
           </div>
         </div>
       ))}
