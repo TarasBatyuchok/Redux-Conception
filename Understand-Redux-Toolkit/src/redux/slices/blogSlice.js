@@ -1,19 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-
-
 const blogSlice = createSlice({
   name: "blogs",
-  initialState:[],
+  initialState: [],
   reducers: {
-
     addPostsBlog(state, action) {
-      return action.payload;  // Просто замінюємо весь масив на нові дані
+      return action.payload;
     },
-  }
-})
+  },
+});
 
-export const {addPostsBlog} = blogSlice.actions;
+export const { addPostsBlog } = blogSlice.actions;
 export default blogSlice.reducer;
-
-

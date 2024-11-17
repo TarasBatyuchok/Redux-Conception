@@ -1,40 +1,73 @@
 {
-    "posts": [
-      { "id": "1", "title": "a title-1", "views": 100 },
-      { "id": "2", "title": "another title-2", "views": 200 },
-      { "id": "3", "title": "another title-3", "views": 200 },
-      { "id": "4", "title": "another title-4", "views": 200 },
-      { "id": "5", "title": "another title-5", "views": 200 },
-      { "id": "6", "title": "another title-6", "views": 200 },
-      { "id": "7", "title": "another title-7", "views": 200 },
-      { "id": "8", "title": "another title-8", "views": 200 }
-    ],
-    "comments": [
-      { "id": "1", "text": "a comment about post 1", "postId": "1" },
-      { "id": "2", "text": "another comment about post 1", "postId": "1" }
-    ],
-    "profile": {
-      "name": "typicode"
+  "posts": [
+    {
+      "id": "1",
+      "title": "a title-1",
+      "views": 100
     },
-    "blogs":[
-      {
-        "id": "1",
-        "title": "Basic Redux-Toolkit",
-        "body":
-          "The Redux Toolkit package is intended to be the standard way to write Redux logic. It was originally created to help address three common concerns about Redux",
-        "response": {
-          "like": 0,
-          "unlike": 0
-        }
-      },
-      {
-        "id": "2",
-        "title":"React Redux",
-        "body":"React Redux is maintained by the Redux team, and kept up-to-date with the latest APIs from Redux and React.",
-        "response": {
-          "like": 0,
-          "unlike": 0
-        }
-      }
-    ]
-  }
+    {
+      "id": "2",
+      "title": "another title-2",
+      "views": 200
+    },
+    {
+      "id": "3",
+      "title": "another title-3",
+      "views": 200
+    },
+    {
+      "id": "4",
+      "title": "another title-4",
+      "views": 200
+    },
+    {
+      "id": "5",
+      "title": "another title-5",
+      "views": 200
+    },
+    {
+      "id": "6",
+      "title": "another title-6",
+      "views": 200
+    },
+    {
+      "id": "7",
+      "title": "another title-7",
+      "views": 200
+    },
+    {
+      "id": "8",
+      "title": "another title-8",
+      "views": 200
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "text": "a comment about post 1",
+      "postId": "1"
+    },
+    {
+      "id": "2",
+      "text": "another comment about post 1",
+      "postId": "1"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "blogs": [
+    {
+      "id": 1731878370871,
+      "name": "asd",
+      "title": "asda",
+      "body": "sd"
+    },
+    {
+      "id": 1731878418790,
+      "name": "qwe",
+      "title": "qweq",
+      "body": "we"
+    }
+  ]
+}

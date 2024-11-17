@@ -1,7 +1,10 @@
 import { useRef, useState } from "react";
+import { useDispatch } from "react-redux";
+import { createPost } from "../redux/asyncAction/thunkBlogs";
 
 const BlogForm = () => {
-  
+  const dispatch = useDispatch();
+
   const userRef = useRef();
   const titleRef = useRef();
   const bodyRef = useRef();
@@ -11,12 +14,12 @@ const BlogForm = () => {
 
   
   const checkFormValidity = () => {
-    const userId = userRef.current.value;
+    const userName = userRef.current.value;
     const title = titleRef.current.value;
     const body = bodyRef.current.value;
     
     
-    setIsFormValid(userId && title && body);
+    setIsFormValid(userName && title && body);
   };
 
   const onSubmit = (e) => {
@@ -24,12 +27,18 @@ const BlogForm = () => {
     
     
     const formData = {
-      userId: userRef.current.value,
+      name: userRef.current.value,
       title: titleRef.current.value,
       body: bodyRef.current.value,
+      id: Date.now()
     };
 
     console.log("Form submitted:", formData);
+    dispatch(createPost(formData))
+
+    userRef.current.value = '';
+    titleRef.current.value = '';
+    bodyRef.current.value = '';
   };
 
   return (
