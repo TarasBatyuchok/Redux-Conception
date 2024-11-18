@@ -58,16 +58,10 @@
   },
   "blogs": [
     {
-      "id": 1731878370871,
-      "name": "asd",
-      "title": "asda",
+      "id": "1731964358356",
+      "name": "asda",
+      "title": "sda",
       "body": "sd"
-    },
-    {
-      "id": 1731878418790,
-      "name": "qwe",
-      "title": "qweq",
-      "body": "we"
     }
   ]
 }

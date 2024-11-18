@@ -5,11 +5,12 @@ const responseEmoji = {
   unlike: "👎",
 };
 
-const Like = () => {
+const Like = ({ id }) => {
   const [selectedResponse, setSelectedResponse] = useState(null);
 
   const handleClick = (response) => {
     setSelectedResponse(response);
+    console.log({ id, response }); 
   };
 
   return (

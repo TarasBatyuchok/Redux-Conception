@@ -30,7 +30,7 @@ const BlogForm = () => {
       name: userRef.current.value,
       title: titleRef.current.value,
       body: bodyRef.current.value,
-      id: Date.now()
+      id: Date.now().toString()
     };
 
     console.log("Form submitted:", formData);
@@ -39,6 +39,7 @@ const BlogForm = () => {
     userRef.current.value = '';
     titleRef.current.value = '';
     bodyRef.current.value = '';
+    setIsFormValid(false)
   };
 
   return (

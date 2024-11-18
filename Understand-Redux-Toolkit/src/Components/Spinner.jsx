@@ -2,7 +2,6 @@ function Spinner() {
   return (
     <>
       <div
-   
         className="py-2.5 px-5 me-2 text-sm font-medium   rounded-lg border border-gray-200 hover:bg-gray-100  inline-flex items-center"
       >
         <svg

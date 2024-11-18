@@ -26,7 +26,7 @@ export const createPost = (newPost) => async (dispatch) => {
 export const deletePost = (postId) => async (dispatch) => {
   try {  
     console.log(postId)
-    await api.deletePost(postId).then(() => console.log("Deleted successfully"));
+    await api.deletePost(postId)
   
     dispatch(getPost()); 
   } catch (error) {
