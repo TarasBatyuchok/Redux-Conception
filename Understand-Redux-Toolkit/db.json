@@ -56,12 +56,5 @@
   "profile": {
     "name": "typicode"
   },
-  "blogs": [
-    {
-      "id": "1731964358356",
-      "name": "asda",
-      "title": "sda",
-      "body": "sd"
-    }
-  ]
+  "blogs": []
 }
